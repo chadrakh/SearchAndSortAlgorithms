@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args){
 
@@ -8,6 +10,8 @@ public class Main {
 
         // Quick Sort Call
         Sort.quickSort(numbers, 0, numbers.length - 1);
+
+        Sort.selectionSort(numbers);
 
     }
 }

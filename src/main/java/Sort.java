@@ -9,6 +9,7 @@ public class Sort {
 
             swapped = false;
 
+            // Loop checks for length - 1 as there's nothing to compare the final value against
             for (int i = 0; i < array.length - 1; i++) {
 
                 if (array[i] > array[i+1]) {
@@ -21,7 +22,27 @@ public class Sort {
             }
         }
 
-        System.out.println(Arrays.toString(array));
+        System.out.println("Bubble Sort: " + Arrays.toString(array));
+    }
+
+    public static void selectionSort(int[] array){
+
+        for (int i = 0; i < array.length - 1; i++) {
+            int currentMinIndex = i;
+
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[currentMinIndex]) {
+                    currentMinIndex = j;
+                }
+            }
+
+            int temp = array[i];
+            array[i] = array[currentMinIndex];
+            array[currentMinIndex] = temp;
+
+        }
+
+        System.out.println("Selection Sort: " + Arrays.toString(array));
     }
 
     public static void quickSort(int[] array, int lowIndex, int highIndex){
@@ -32,6 +53,6 @@ public class Sort {
         // Recursively quick sort values in the left and right partitions
         // around your pivot
 
-        System.out.println(Arrays.toString(array));
+        System.out.println("Quick Sort: " + Arrays.toString(array));
     }
 }
